@@ -13,7 +13,7 @@ void setup()
    pinMode(blueLED, OUTPUT);
    pinMode(greenLED, OUTPUT);
 
-   Particle.function("Switch",ledToggle);
+   Particle.function("Switch",HTMLfunciton);
 
    digitalWrite(redLED, LOW);
    digitalWrite(blueLED, LOW);
@@ -29,43 +29,43 @@ void loop()
 
 
 
-int ledToggle(String command) {
+int HTMLfunciton(String arg) {
 
 
-    if (command=="red") {
+    if (arg=="red") {
         if(RedClicked%2==0)
         {
-        digitalWrite(redLED,HIGH);
-        RedClicked++
+          digitalWrite(redLED,HIGH);
+          RedClicked++
         }else
         {
-        digitalWrite(redLED, LOW);
-        RedClicked++
+          digitalWrite(redLED, LOW);
+          RedClicked++
         }
         return 1;
     }
-    else if (command=="blue") {
+    else if (arg=="blue") {
         if(BlueClicked%2==0)
         {
-        digitalWrite(blueLED,HIGH);
-        BlueClicked++;
+          digitalWrite(blueLED,HIGH);
+          BlueClicked++;
         }else
         {
-        digitalWrite(blueLED, LOW);
-        BlueClicked++;
+          digitalWrite(blueLED, LOW);
+          BlueClicked++;
         }
         return 2;
     }
-    else if (command=="green")
+    else if (arg=="green")
     {
         if(GreenClicked%2==0)
         {
-        digitalWrite(greenLED,HIGH);
-        GreenClicked++;
+          digitalWrite(greenLED,HIGH);
+          GreenClicked++;
         }else
         {
-        digitalWrite(greenLED, LOW);
-        GreenClicked++;
+          digitalWrite(greenLED, LOW);
+          GreenClicked++;
         }
         return 3;
     }
